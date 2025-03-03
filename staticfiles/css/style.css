@@ -1,0 +1,103 @@
+:root {
+    --primary-color: #2563eb;
+    --primary-hover: #1d4ed8;
+}
+
+.btn-primary {
+    background-color: var(--primary-color);
+    border-color: var(--primary-color);
+}
+
+.btn-primary:hover {
+    background-color: var(--primary-hover);
+    border-color: var(--primary-hover);
+}
+
+.navbar {
+    padding: 1rem 0;
+    background-color: var(--primary-color); /* Add this line */
+    color: rgb(105, 0, 217); /* Optional: Text color for contrast */
+}
+
+.hero-section {
+    background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)),
+                url('images/hero-bg.jpg');
+    background-size: cover;
+    background-position: center;
+}
+.form-control-lg {
+    padding: 1rem 1.25rem;
+    border-radius: 0.75rem;
+    border: 1px solid #e2e8f0;
+}
+
+.form-control-lg:focus {
+    border-color: #2563eb;
+    box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
+}
+
+.card {
+    border-radius: 1.25rem;
+}
+
+.btn-lg {
+    padding: 0.75rem 1.5rem;
+    border-radius: 0.75rem;
+    font-weight: 500;
+}
+/* Add these under existing styles */
+.text-muted {
+    color: #64748b !important;
+}
+
+.alert-danger {
+    background-color: #fee2e2;
+    border-color: #fca5a5;
+    color: #dc2626;
+    border-radius: 0.75rem;
+}
+
+a.text-decoration-none {
+    color: var(--primary-color) !important;
+    font-weight: 500;
+}
+
+a.text-decoration-none:hover {
+    color: var(--primary-hover) !important;
+}
+.table-hover tbody tr:hover {
+    background-color: #f8f9fa;
+}
+
+.clickable-row {
+    transition: all 0.2s ease;
+}
+
+.clickable-row:hover {
+    transform: translateX(4px);
+}
+
+.bg-light {
+    background-color: #f8fafc !important;
+}
+
+.table {
+    border-collapse: separate;
+    border-spacing: 0;
+}
+
+.table thead th {
+    border-bottom: 2px solid #e2e8f0;
+    border-top: none;
+}
+
+.table td, .table th {
+    padding: 1rem;
+    vertical-align: middle;
+    border-top: 1px solid #f1f5f9;
+}
+
+.badge {
+    padding: 0.5em 0.75em;
+    font-weight: 500;
+}
