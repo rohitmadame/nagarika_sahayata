@@ -1,0 +1,104 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="container mt-5">
+    <div class="row justify-content-center">
+        <div class="col-md-6">
+            <div class="card shadow-lg">
+                <div class="card-header bg-primary text-white">
+                    <h3 class="mb-0"><i class="fas fa-user-plus"></i> User Registration</h3>
+                </div>
+                <div class="card-body">
+                    {% if form.errors %}
+                    <div class="alert alert-danger">
+                        {% for field, errors in form.errors.items %}
+                            {% for error in errors %}
+                                <p>{{ error }}</p>
+                            {% endfor %}
+                        {% endfor %}
+                    </div>
+                    {% endif %}
+
+                    <form method="post">
+                        {% csrf_token %}
+                        
+                        <!-- Username Field -->
+                        <div class="mb-3">
+                            <label class="form-label"><i class="fas fa-user"></i> Username</label>
+                            <input type="text" class="form-control" name="username" required>
+                        </div>
+                        
+                        <!-- Email Field -->
+                        <div class="mb-3">
+                            <label class="form-label"><i class="fas fa-envelope"></i> Email</label>
+                            <input type="email" class="form-control" name="email" required>
+                            <small class="form-text text-muted">
+                                Please enter a valid email address.
+                            </small>
+                        </div>
+                        
+                        <!-- Password Field -->
+                        <div class="mb-3">
+                            <label class="form-label"><i class="fas fa-key"></i> Password</label>
+                            <input type="password" class="form-control" name="password1" required>
+                            <small class="form-text text-muted">
+                                Password must contain:
+                                <ul>
+                                    <li>At least 8 characters</li>
+                                    <li>At least one uppercase letter (A-Z)</li>
+                                    <li>At least one special character (!@#$%^&*)</li>
+                                </ul>
+                            </small>
+                        </div>
+                        
+                        <!-- Confirm Password Field -->
+                        <div class="mb-3">
+                            <label class="form-label"><i class="fas fa-key"></i> Confirm Password</label>
+                            <input type="password" class="form-control" name="password2" required>
+                        </div>
+                        
+                        <!-- Submit Button -->
+                        <button type="submit" class="btn btn-primary w-100">
+                            <i class="fas fa-user-check"></i> Register
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<style>
+    .card {
+        border-radius: 15px;
+        margin-top: 100px;
+    }
+    .form-control {
+        border-radius: 10px;
+        padding: 12px;
+    }
+    .btn {
+        border-radius: 10px;
+        padding: 12px;
+        font-size: 1.1rem;
+        transition: all 0.3s;
+    }
+    .btn:hover {
+        transform: scale(1.02);
+    }
+    .card-header {
+        border-radius: 15px 15px 0 0;
+        padding: 20px;
+    }
+    .alert {
+        border-radius: 10px;
+    }
+    .form-text {
+        font-size: 0.9rem;
+        margin-top: 5px;
+    }
+    ul {
+        margin-bottom: 0;
+    }
+</style>
+{% endblock %}

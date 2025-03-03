@@ -1,0 +1,70 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="container mt-5">
+    <div class="card shadow-lg">
+        <div class="card-header bg-primary text-white">
+            <h3 class="mb-0"><i class="fas fa-info-circle"></i> Complaint Details</h3>
+        </div>
+        <div class="card-body">
+            <!-- Complaint Information -->
+            <div class="mb-4">
+                <h4 class="text-primary">{{ complaint.complaint_type }}</h4>
+                <p class="text-muted">Created by: {{ complaint.user.username }}</p>
+                <p class="text-muted">Date: {{ complaint.created_at|date:"M d, Y H:i" }}</p>
+                
+                <p class="text-muted">Description: {{ complaint.description }}</p>
+                {% if complaint.landmark %}
+                    <p class="text-muted">Landmark: {{ complaint.landmark }}</p>
+                {% endif %}
+            </div>
+
+            <!-- Images Section -->
+            <div class="mb-4">
+                <h5 class="text-primary"><i class="fas fa-images"></i> Attached Images</h5>
+                {% if complaint.images.exists %}
+                    <div class="row">
+                        {% for image in complaint.images.all %}
+                            <div class="col-md-4 mb-3">
+                                <div class="card">
+                                    <img src="{{ image.image.url }}" class="card-img-top" alt="Complaint Image">
+                                    <div class="card-body">
+                                        <p class="text-muted">Image {{ forloop.counter }}</p>
+                                    </div>
+                                </div>
+                            </div>
+                        {% endfor %}
+                    </div>
+                {% else %}
+                    <div class="alert alert-info">
+                        No images attached to this complaint.
+                    </div>
+                {% endif %}
+            </div>
+
+            <!-- Back Button -->
+            <a href="{% url 'admin_dashboard' %}" class="btn btn-secondary">
+                <i class="fas fa-arrow-left"></i> Back to Dashboard
+            </a>
+        </div>
+    </div>
+</div>
+
+<style>
+    .card {
+        border-radius: 15px;
+    }
+    .card-img-top {
+        border-radius: 10px 10px 0 0;
+        height: 200px;
+        object-fit: cover;
+    }
+    .badge {
+        font-size: 0.9rem;
+        padding: 0.5em 0.75em;
+    }
+    .alert {
+        border-radius: 10px;
+    }
+</style>
+{% endblock %}

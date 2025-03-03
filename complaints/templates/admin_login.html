@@ -1,0 +1,65 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="container mt-5">
+    <div class="row justify-content-center">
+        <div class="col-md-6">
+            <div class="card shadow-lg">
+                <div class="card-header bg-danger text-white">
+                    <h3 class="mb-0"><i class="fas fa-lock"></i> Admin Login</h3>
+                </div>
+                <div class="card-body">
+                    {% if error %}
+                    <div class="alert alert-danger">{{ error }}</div>
+                    {% endif %}
+                    
+                    <form method="post">
+                        {% csrf_token %}
+                        
+                        <div class="mb-3">
+                            <label class="form-label"><i class="fas fa-user"></i> Username</label>
+                            <input type="text" class="form-control" name="username" required>
+                        </div>
+                        
+                        <div class="mb-3">
+                            <label class="form-label"><i class="fas fa-key"></i> Password</label>
+                            <input type="password" class="form-control" name="password" required>
+                        </div>
+                        
+                        <button type="submit" class="btn btn-danger w-100">
+                            <i class="fas fa-sign-in-alt"></i> Login
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<style>
+    .card {
+        border-radius: 15px;
+        margin-top: 100px;
+    }
+    .form-control {
+        border-radius: 10px;
+        padding: 12px;
+    }
+    .btn {
+        border-radius: 10px;
+        padding: 12px;
+        font-size: 1.1rem;
+        transition: all 0.3s;
+    }
+    .btn:hover {
+        transform: scale(1.02);
+    }
+    .card-header {
+        border-radius: 15px 15px 0 0;
+        padding: 20px;
+    }
+    .alert {
+        border-radius: 10px;
+    }
+</style>
+{% endblock %}
