@@ -71,7 +71,7 @@ DATABASES = {
         'NAME': os.getenv('DATABASE_NAME', 'railway '),
         'USER': os.getenv('DATABASE_USER', 'postgres'),
         'PASSWORD': os.getenv('DATABASE_PASSWORD', 'wlCECxFQRFWcpCrmhzroJcVYspGzJvwX'),
-        'HOST': os.getenv('DATABASE_HOST', 'nagarikasahayata-production.up.railway.app'),
+        'HOST': 'nagarikasahayata-production.up.railway.app',
         'PORT': os.getenv('DATABASE_PORT', '5432'),
     }
 }
