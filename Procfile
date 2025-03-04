@@ -1,2 +1,2 @@
 
-web: gunicorn nagarika_sahayata.wsgi --log-file -
+web: gunicorn nagarika_sahayata.wsgi --config gunicorn.conf.py
