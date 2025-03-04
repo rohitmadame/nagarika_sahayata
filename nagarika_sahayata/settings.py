@@ -14,7 +14,7 @@ SECRET_KEY = os.getenv('SECRET_KEY', 'django-insecure-default-key-for-dev')
 DEBUG = os.getenv('DEBUG', 'False') == 'True'
 # SECURITY WARNING: don't run with debug turned on in production!
 # Allowed hosts
-ALLOWED_HOSTS = os.getenv('ALLOWED_HOSTS', '').split(',')
+ALLOWED_HOSTS = ['nagarikasahayata-production.up.railway.app','localhost','127.0.0.1']
 
 
 # Application definition
@@ -71,7 +71,7 @@ DATABASES = {
         'NAME': os.getenv('DATABASE_NAME', 'railway '),
         'USER': os.getenv('DATABASE_USER', 'postgres'),
         'PASSWORD': os.getenv('DATABASE_PASSWORD', 'wlCECxFQRFWcpCrmhzroJcVYspGzJvwX'),
-        'HOST': os.getenv('DATABASE_HOST', 'nagarika_sahayata.railway.internal'),
+        'HOST': os.getenv('DATABASE_HOST', 'nagarikasahayata-production.up.railway.app'),
         'PORT': os.getenv('DATABASE_PORT', '5432'),
     }
 }
