@@ -1,3 +1,2 @@
-web: gunicorn nagarika_sahayata.wsgi --log-file -
+web: gunicorn nagarika_sahayata.wsgi
 
-web: python manage.py migrate && gunicorn nagarika_sahayata.wsgi
