@@ -11,10 +11,10 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 
 # SECURITY WARNING: keep the secret key used in production secret!
 SECRET_KEY = 'vmw8YTk9SNOS4iXosN8xqM0A3dvs6Lea_3r5Er42x-5uddYjDZavI6KBL1rgIgM9lDc'
-DEBUG = 'True'
+DEBUG =False
 # SECURITY WARNING: don't run with debug turned on in production!
 
-ALLOWED_HOSTS = ['localhost', '127.0.0.1','nagarika-sahayata.onrender.com']
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
