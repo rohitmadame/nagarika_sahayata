@@ -11,7 +11,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 
 # SECURITY WARNING: keep the secret key used in production secret!
 SECRET_KEY = os.getenv('SECRET_KEY', 'django-insecure-default-key-for-dev')
-DEBUG = False
+DEBUG = True
 # SECURITY WARNING: don't run with debug turned on in production!
 # Allowed hosts
 ALLOWED_HOSTS = ['nagarikasahayata-production.up.railway.app','localhost','127.0.0.1']
@@ -104,7 +104,7 @@ AUTH_PASSWORD_VALIDATORS = [
 
 
 CSRF_TRUSTED_ORIGINS = [
-    "https://nagarikasahayata-production.up.railway.app/"
+    "https://nagarikasahayata-production.up.railway.app"
 ]
 # Internationalization
 # https://docs.djangoproject.com/en/5.0/topics/i18n/
