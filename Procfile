@@ -1,2 +1,2 @@
-web: gunicorn nagarika_sahayata.wsgi
 
+web: gunicorn nagarika_sahayata.wsgi --log-file -
